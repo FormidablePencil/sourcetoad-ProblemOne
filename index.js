@@ -82,7 +82,10 @@ class Mutator {
     return this.a;
   }
 
-  problem3() {}
+  problem3() {
+    this.problem2();
+    return this.a.filter((element) => element.guest_type === "guest")
+  }
 
   problem1_reusable_logic() {
     this.a.map((element) => {
@@ -93,7 +96,7 @@ class Mutator {
 }
 
 function mutateArray(a) {
-  return new Mutator(a).problem2();
+  return new Mutator(a).problem3();
 }
 
 $(document).ready(function () {
