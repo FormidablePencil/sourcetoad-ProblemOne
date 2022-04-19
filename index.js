@@ -84,11 +84,12 @@ class Mutator {
 
   problem3() {
     this.problem2();
-    return this.a.filter((element) => element.guest_type === "guest");
+    this.a = this.a.filter((element) => element.guest_type === "guest");
+    return this.a;
   }
 
-  problem3() {
-    this.problem2()
+  problem4() {
+    this.problem3();
     // first name will takes precedence over last name in alphabetical order
     this.sort_alphabetically("last_name");
     this.sort_alphabetically("first_name");
@@ -111,7 +112,7 @@ class Mutator {
 }
 
 function mutateArray(a) {
-  return new Mutator(a).problem3();
+  return new Mutator(a).problem4();
 }
 
 $(document).ready(function () {

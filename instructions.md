@@ -35,7 +35,7 @@ Do not assume the data will always be in the exact format provided.  Commit your
 
 The final result should look like this:
 ```
-[
+[ // This is in reverse of alphabetical order!
   {
     "guest_type": "guest",
     "first_name": "Jane",
@@ -45,7 +45,7 @@ The final result should look like this:
   },
   {
     "guest_type": "guest",
-    "first_name": "John",
+    "first_name": "John", // Jane goes before John. This final result demo must be incorrect
     "last_name": "Doe",
     "room_no": "C73",
     "some_total": 18
