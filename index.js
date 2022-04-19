@@ -84,7 +84,22 @@ class Mutator {
 
   problem3() {
     this.problem2();
-    return this.a.filter((element) => element.guest_type === "guest")
+    return this.a.filter((element) => element.guest_type === "guest");
+  }
+
+  problem3() {
+    this.problem2()
+    // first name will takes precedence over last name in alphabetical order
+    this.sort_alphabetically("last_name");
+    this.sort_alphabetically("first_name");
+
+    return this.a;
+  }
+
+  sort_alphabetically(key) {
+    return this.a.sort((first, second) =>
+      first[key].localeCompare(second["first_name"])
+    );
   }
 
   problem1_reusable_logic() {
