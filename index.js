@@ -66,18 +66,34 @@ class Mutator {
     return this.a.map((element) => {
       element.room_no = element.guest_booking.room_no;
       element.some_array = [...element.guest_booking.some_array];
+      this.problem1_reusable_logic();
+    });
+  }
+
+  problem2() {
+    this.a.map((element) => {
+      element.room_no = element.guest_booking.room_no;
+      element.some_array = [...element.guest_booking.some_array];
+      element.some_total = element.some_array.reduce((a, b) => a + b);
+      delete element["some_array"];
+      return element;
+    });
+    this.problem1_reusable_logic();
+    return this.a;
+  }
+
+  problem3() {}
+
+  problem1_reusable_logic() {
+    this.a.map((element) => {
       delete element["guest_booking"];
       return element;
     });
   }
-
-  problem2() {}
-
-  problem3() {}
 }
 
 function mutateArray(a) {
-  return new Mutator(a).problem1();
+  return new Mutator(a).problem2();
 }
 
 $(document).ready(function () {
