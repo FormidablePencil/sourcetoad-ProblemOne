@@ -63,11 +63,14 @@ class Mutator {
   }
 
   problem1() {
-    return this.a.map((element) => {
+    this.a.map((element) => {
       element.room_no = element.guest_booking.room_no;
       element.some_array = [...element.guest_booking.some_array];
-      this.problem1_reusable_logic();
+      return element;
     });
+    this.problem1_reusable_logic();
+
+    return this.a;
   }
 
   problem2() {
